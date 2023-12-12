@@ -10,7 +10,6 @@ const App = () => {
 
   const handleShortenURL = async (e: any) => {
     e.preventDefault();
-    console.log('Form submitted');
     try {
       const response = await axios.post(`${API_BASE_URL}/shorten`, {
         URL: originalURL,
