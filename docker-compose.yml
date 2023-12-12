@@ -1,0 +1,33 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - '8080:8080'
+    networks:
+      - url-shortener-network
+    depends_on:
+      - db
+    environment:
+      MONGO_URI: 'mongodb://db:27017/url-shortener'
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - '3000:3000'
+    networks:
+      - url-shortener-network
+
+  db:
+    image: mongo:latest
+    ports:
+      - '27018:27017'
+    volumes:
+      - C:\Users\robdeboer\Documents\UrlShortenerData:/data/db
+    networks:
+      - url-shortener-network
+
+networks:
+  url-shortener-network:
+    driver: bridge
