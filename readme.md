@@ -18,6 +18,7 @@ You can:
 
 1. Clone this repository
 2. Ensure Docker is installed on your machine
-3. Run `docker compose up -d` and visit localhost:3000 to interact with the frontend
+3. Run `docker compose up -d` and visit [localhost:3000](localhost:3000) to interact with the frontend
+4. If any changes are made to either the front or backend, you can run `docker compose up --build -d` to rebuild the images
 
 Note: In the Dockerfile for the backend, you will need to configure an absolute path for data persistence. For me, I set it to my documents on my windows PC.
