@@ -35,6 +35,9 @@ func generateRandomNumber() int {
 
 // toBase62 converts a decimal number to Base62.
 func toBase62(num int64) string {
+	if num == 0 {
+        return string(base62Chars[0])
+    }
 	var result string
 	for num > 0 {
 		remainder := num % base62Length
